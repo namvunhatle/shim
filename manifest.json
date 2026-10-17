@@ -1,1 +1,1 @@
-{"name":"Shim","id":"shim-local-dev","api":"1.0.0","main":"dist/code.js","ui":"dist/ui.html","editorType":["figma"],"documentAccess":"dynamic-page","networkAccess":{"allowedDomains":["none"]}}
+{"name":"Shim","id":"1693309828732794643","api":"1.0.0","main":"dist/code.js","ui":"dist/ui.html","editorType":["figma"],"documentAccess":"dynamic-page","networkAccess":{"allowedDomains":["none"]}}
