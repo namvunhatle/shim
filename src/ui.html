@@ -19,7 +19,7 @@ button:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visi
 
 /* top line + header */
 .connection-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px;font:12px var(--mono);color:var(--ink)}
-.connection-row span:before{content:"";display:inline-block;width:10px;height:10px;background:var(--blue);margin-right:8px}
+.connection-row span:before{content:"";display:inline-block;width:10px;height:10px;background:var(--ink);margin-right:8px}
 .connection-row button{height:28px;padding:0 10px;font-size:11px;box-shadow:2px 2px 0 var(--ink)}
 header{display:flex;align-items:center;gap:16px;margin-bottom:22px}
 .logo{flex:none;width:76px;height:56px}
@@ -29,8 +29,8 @@ header p{margin-top:6px;font:12px var(--mono)}
 
 /* every section is a window */
 .panel{background:var(--win);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 0 26px}
-.tb{height:36px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font:700 13px var(--mono);letter-spacing:.02em}
-.tb.ink{background:var(--ink)}
+.tb{height:36px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font:700 13px var(--mono);letter-spacing:.02em}
+
 .tb .x{width:24px;height:24px;background:var(--win);border:2px solid var(--ink);position:relative;flex:none}
 .tb .x:before,.tb .x:after{content:"";position:absolute;left:3px;right:3px;top:9px;height:2px;background:var(--ink);transform:rotate(45deg)}
 .tb .x:after{transform:rotate(-45deg)}
@@ -51,7 +51,7 @@ header p{margin-top:6px;font:12px var(--mono)}
 .tabs button{height:28px;padding:0 12px;font-size:12px;box-shadow:none}
 .tabs button.active{background:var(--ink);color:#fff}
 .tb .tabs button{height:24px;border-color:#fff;background:transparent;color:#fff;padding:0 8px;font-size:11px}
-.tb .tabs button.active{background:#fff;color:var(--blue)}
+.tb .tabs button.active{background:#fff;color:var(--ink)}
 #gauge{margin:14px 0 4px;display:flex;flex-direction:column;gap:6px}
 #gauge:empty{display:none}
 .leaf{height:30px;border:2px solid var(--ink);background:var(--win);display:flex;align-items:center;padding:0 10px;font:700 12px var(--mono);white-space:nowrap;overflow:hidden;transform-origin:left center;animation:fill .3s steps(6) both;animation-delay:calc(var(--i,0)*70ms)}
@@ -73,7 +73,7 @@ header p{margin-top:6px;font:12px var(--mono)}
 .next-action{margin-top:12px;border:2px solid var(--ink);background:var(--bone);padding:10px 12px}
 .next-action:has(p:empty){display:none}
 #next-step{color:var(--ink);font:700 13px var(--mono)}
-#next-step:before{content:"> ";color:var(--blue)}
+#next-step:before{content:"> ";color:var(--ink)}
 #review-next{margin-top:10px;height:28px;padding:0 10px;font-size:11px;box-shadow:2px 2px 0 var(--ink)}
 
 /* findings */
@@ -90,10 +90,10 @@ header p{margin-top:6px;font:12px var(--mono)}
 .finding-actions .technical-link{border:0;box-shadow:none;background:none;color:var(--dim);text-decoration:underline;text-underline-offset:3px;padding:0 4px;font-weight:500}
 .action-detail{font-size:12px;margin-top:8px}
 summary{cursor:pointer;font:700 12px var(--mono)}
-summary::marker{color:var(--blue)}
+summary::marker{color:var(--ink)}
 .resolution{margin-top:8px;padding:9px 12px;background:var(--bone);border:2px solid var(--ink);color:var(--ink);font-size:12px}
 .secondary-section{padding:10px 0;border-top:2px solid var(--ink);margin:12px 0 0}
-.generation-warning{padding:10px 12px;border:2px solid var(--ink);background:var(--bone);margin:12px 0;font-size:12px;box-shadow:4px 4px 0 var(--blue)}
+.generation-warning{padding:10px 12px;border:2px solid var(--ink);background:var(--bone);margin:12px 0;font-size:12px;box-shadow:4px 4px 0 var(--ink)}
 .generation-warning strong{font:700 13px var(--mono)}
 .generation-warning p{font-size:12px;color:var(--ink)}
 .generation-warning button{margin-top:8px;height:28px;padding:0 10px;font-size:11px;box-shadow:2px 2px 0 var(--ink)}
@@ -115,7 +115,7 @@ summary::marker{color:var(--blue)}
 #files{width:100%;height:36px;margin:12px 0 10px;padding:0 10px;background:var(--win);border:2px solid var(--ink);border-radius:0;font:12px var(--mono)}
 pre{margin:0;min-height:170px;max-height:320px;overflow:auto;white-space:pre;tab-size:4;font:12px/1.65 var(--mono);color:#E8E4D8;background:var(--ink);padding:14px;border:2px solid var(--ink)}
 .actions{display:flex;gap:10px;margin-top:14px}
-#message{font:12px var(--mono);color:var(--blue);min-height:18px;margin-top:10px}
+#message{font:12px var(--mono);color:var(--ink);min-height:18px;margin-top:10px}
 footer{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--dim)}
 </style></head><body>
 <div class="connection-row"><span id="connection" role="status">UI loading · v0.5.0</span><button id="refresh">Refresh selection</button></div>
@@ -131,7 +131,7 @@ footer{display:flex;justify-content:space-between;font:11px var(--mono);color:va
 <p class="verification-note">Design readiness and code generation are evaluated separately. Not build verified.</p>
 <details id="technical-report" class="report-details"><summary id="technical-count">Technical details</summary><div id="raw-diagnostics"></div><details><summary>Parsed checks</summary><div id="passed"></div></details></details>
 </div></section>
-<section class="panel"><div class="tb ink"><span>implementation</span><span class="badge">NOT BUILD VERIFIED</span><span class="x"></span></div><div class="rb"><div class="tabs"><button id="compose" class="active">Jetpack Compose</button><button id="xml">Android XML</button></div><select id="files" aria-label="Generated file" disabled><option>No generated files</option></select><pre id="code" tabindex="0">// Analyze a selection to preview implementation.</pre><div class="actions"><button id="copy" disabled>Copy code</button><button id="export" disabled>Export files (.zip)</button></div><p class="note">1 Figma px → 1 dp / text sp. Fonts need Android mapping. Snapshot: analyze again after design edits. Not build verified.</p><div id="message" role="status" aria-live="polite"></div></div></section>
+<section class="panel"><div class="tb"><span>implementation</span><span class="badge">NOT BUILD VERIFIED</span><span class="x"></span></div><div class="rb"><div class="tabs"><button id="compose" class="active">Jetpack Compose</button><button id="xml">Android XML</button></div><select id="files" aria-label="Generated file" disabled><option>No generated files</option></select><pre id="code" tabindex="0">// Analyze a selection to preview implementation.</pre><div class="actions"><button id="copy" disabled>Copy code</button><button id="export" disabled>Export files (.zip)</button></div><p class="note">1 Figma px → 1 dp / text sp. Fonts need Android mapping. Snapshot: analyze again after design edits. Not build verified.</p><div id="message" role="status" aria-live="polite"></div></div></section>
 <footer><span>Deterministic · No AI · No network</span><span>Android-first handoff / v0.5.0</span></footer>
 <script>
 // Kept separate from the bundle so bundle parse/startup failures are visible.

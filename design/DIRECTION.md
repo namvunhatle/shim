@@ -17,3 +17,6 @@
 ---
 ## Revision 2 (2026-10-17): Stranger.exe style
 Designer: the feeler-gauge look read as AI slop; wanted the Stranger.exe style (`~/Downloads/dating/explore/stranger-exe`). Replaced wholesale. Tokens: bone #ECE8DC + dot grid, white windows, ink #10131C, cobalt #2336FF, 2px ink borders, hard 4–6px offset shadows, square corners. Type: Archivo (embedded variable woff2, wdth 108%, 900) for hero; ui-monospace for system voice. Sections are windows (`selection.fig`, `readiness.log`, `implementation`). Logo: the two faces with a cobalt wedge between them. Gauge leaves became dithered progress bars (blockers cobalt). Light only, as in Stranger.exe. Same look as history row "Stranger.exe (quiet)": chosen by the designer, not by the process.
+
+## Revision 3 (2026-10-17): less blue
+Blue was on every title bar, prompt and marker, which read as too much. Blue now means three things only: the primary action (Analyze), the verdict that needs attention, and blockers. Title bars, prompts, markers, messages and the connection dot are ink. Community icon and cover follow the same rule: bone ground, ink bars, the blue wedge as the one accent.
