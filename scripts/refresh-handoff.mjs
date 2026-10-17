@@ -1,0 +1,11 @@
+// Regenerate a saved native capture with current code, preserving its captured artwork.
+import {build} from 'esbuild';
+import {readFile,writeFile} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+const [input,output]=process.argv.slice(2);if(!input||!output)throw new Error('Usage: node scripts/refresh-handoff.mjs capture.zip output.zip');
+const unpack=spawnSync('python3',['-c',"import zipfile,json,sys,hashlib;z=zipfile.ZipFile(sys.argv[1]);assert z.testzip() is None;print(json.dumps({'schema':json.loads(z.read('android-ui-schema.json')),'sourceArchiveSha256':hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest()}))",input],{encoding:'utf8',maxBuffer:64_000_000});if(unpack.status!==0)throw new Error(unpack.stderr);
+await build({stdin:{contents:"export {analyzeSchema} from './src/pipeline';export {zip} from './src/zip';",resolveDir:process.cwd(),loader:'ts'},bundle:true,platform:'node',format:'esm',outfile:'.test-build/refresh.mjs'});
+const {analyzeSchema,zip}=await import('../.test-build/refresh.mjs'),capture=JSON.parse(unpack.stdout),result=analyzeSchema(capture.schema);
+const provenance={source:'Saved native Figma capture, regenerated with current generator; no new source artwork was invented.',sourceArchiveSha256:capture.sourceArchiveSha256,generatorVersion:JSON.parse(await readFile('package.json','utf8')).version};
+await writeFile(output,zip([...result.compose,...result.xml,{path:'android-ui-schema.json',content:JSON.stringify(result.schema,null,2)},{path:'readiness.json',content:JSON.stringify({overview:result.overview,assumptions:result.schema.assumptions,issues:result.issues,handoff:result.readiness,passed:result.passed,verification:result.verification,provenance},null,2)},{path:'HANDOFF.txt',content:'Shim regenerated draft. Not build verified. No Android rendering/comparison. Uses source artwork from the recorded native capture. Map fonts and app behavior, and review remaining generation limitations before integration.'}]));
+console.log(JSON.stringify({output,artwork:result.overview.artwork,sourceArchiveSha256:provenance.sourceArchiveSha256,statuses:Object.fromEntries(Object.entries(result.readiness.frameworks).map(([k,v])=>[k,v.status]))},null,2));

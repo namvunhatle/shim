@@ -1,0 +1,23 @@
+[
+  {
+    "fixture": "A",
+    "xml": "AAPT2 compile + link passed",
+    "compose": "Kotlin 2.0.21 + Compose compiler passed",
+    "apkBuild": "Not build verified",
+    "visualFidelity": "Not rendered or compared"
+  },
+  {
+    "fixture": "B",
+    "xml": "AAPT2 compile + link passed",
+    "compose": "Kotlin 2.0.21 + Compose compiler passed",
+    "apkBuild": "Not build verified",
+    "visualFidelity": "Not rendered or compared"
+  },
+  {
+    "fixture": "C",
+    "xml": "AAPT2 compile + link passed",
+    "compose": "Kotlin 2.0.21 + Compose compiler passed",
+    "apkBuild": "Not build verified",
+    "visualFidelity": "Not rendered or compared"
+  }
+]

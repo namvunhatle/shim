@@ -1,0 +1,153 @@
+{
+  "id": "card",
+  "name": "Pricing Card",
+  "type": "COMPONENT",
+  "key": "pricing-card",
+  "description": "Simple pricing card",
+  "width": 320,
+  "height": 220,
+  "layoutMode": "VERTICAL",
+  "layoutSizingHorizontal": "FIXED",
+  "layoutSizingVertical": "HUG",
+  "paddingTop": 24,
+  "paddingRight": 24,
+  "paddingBottom": 24,
+  "paddingLeft": 24,
+  "itemSpacing": 12,
+  "primaryAxisAlignItems": "MIN",
+  "counterAxisAlignItems": "MIN",
+  "cornerRadius": 16,
+  "fills": [
+    {
+      "type": "SOLID",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "opacity": 1
+    }
+  ],
+  "children": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "TEXT",
+      "width": 272,
+      "height": 30,
+      "x": 24,
+      "y": 24,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "characters": "Pro plan",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "fontName": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.1,
+            "g": 0.12,
+            "b": 0.16
+          },
+          "opacity": 1
+        }
+      ],
+      "textAutoResize": "HEIGHT",
+      "textAlignHorizontal": "LEFT",
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "price",
+      "name": "Price",
+      "type": "TEXT",
+      "width": 272,
+      "height": 30,
+      "x": 24,
+      "y": 24,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "characters": "$12 / month",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "fontName": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.1,
+            "g": 0.12,
+            "b": 0.16
+          },
+          "opacity": 1
+        }
+      ],
+      "textAutoResize": "HEIGHT",
+      "textAlignHorizontal": "LEFT",
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "description",
+      "name": "Supporting description",
+      "type": "TEXT",
+      "width": 272,
+      "height": 30,
+      "x": 24,
+      "y": 24,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "characters": "Everything you need to get started.",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.1,
+            "g": 0.12,
+            "b": 0.16
+          },
+          "opacity": 1
+        }
+      ],
+      "textAutoResize": "HEIGHT",
+      "textAlignHorizontal": "LEFT",
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    }
+  ]
+}

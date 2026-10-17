@@ -1,0 +1,1705 @@
+{
+  "overview": {
+    "total": 23,
+    "supported": 19,
+    "artwork": 0,
+    "unsupported": 4,
+    "byType": {
+      "FRAME": 5,
+      "GROUP": 1,
+      "ELLIPSE": 1,
+      "VECTOR": 1,
+      "TEXT": 11,
+      "RECTANGLE": 1,
+      "INSTANCE": 2,
+      "COMPONENT": 1
+    }
+  },
+  "assumptions": [
+    "Figma px map to Android dp; text px map to sp at default font scale.",
+    "Fonts require developer-provided Android font resources; platform fallback is generated.",
+    "Auto Layout horizontal alignment and padding map to logical start/end; fixed-position coordinates remain physical. Confirm RTL requirements.",
+    "Not build verified. Generated code has not been verified for this selection on Android.",
+    "Screen root fills the host viewport; child dimensions retain Figma sizing intent. Insets need confirmation."
+  ],
+  "issues": [
+    {
+      "ruleId": "static-layout",
+      "severity": "confirmation",
+      "nodeId": "header/icon",
+      "layer": "Icon group",
+      "explanation": "Fixed-position layout preserves current coordinates; responsive behavior is unspecified.",
+      "impact": "Resizing this container may cause overlap. Needs confirmation.",
+      "fix": "Document resize behavior or add Auto Layout if this layout should adapt."
+    },
+    {
+      "ruleId": "generator-property",
+      "severity": "blocker",
+      "nodeId": "header/vector",
+      "layer": "Complex logo vector",
+      "explanation": "Layer type VECTOR is unsupported; a bounds-preserving placeholder is exported.",
+      "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+      "fix": "Implement this property manually or simplify the Figma specification."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "header/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "supported-scroll",
+      "severity": "info",
+      "nodeId": "scroll",
+      "layer": "Scrollable content",
+      "explanation": "Explicit vertical prototype scrolling maps to Android scroll containers.",
+      "impact": "Scroll direction is mapped; gesture parity has not been rendered or verified.",
+      "fix": "Verify scroll extent and gestures in the Android app."
+    },
+    {
+      "ruleId": "generator-property",
+      "severity": "blocker",
+      "nodeId": "hero",
+      "layer": "Hero image",
+      "explanation": "Image asset is not extracted. A labeled placeholder drawable is generated; replace it with the source asset and verify crop/scale.",
+      "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+      "fix": "Implement this property manually or simplify the Figma specification."
+    },
+    {
+      "ruleId": "image-description",
+      "severity": "confirmation",
+      "nodeId": "hero",
+      "layer": "Hero image",
+      "explanation": "Image semantics are unspecified.",
+      "impact": "Generated image has no spoken description until its accessibility role is defined in the app. Needs confirmation.",
+      "fix": "Confirm whether this image is decorative; otherwise provide an Android content description."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "section/title/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "section/description/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "component-states",
+      "severity": "confirmation",
+      "nodeId": "one/card",
+      "layer": "Plan Card",
+      "explanation": "Component instance metadata is available; current variants: Plan=Pro; required state coverage is unknown.",
+      "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+      "fix": "Confirm which Android states are required; provide those designs if applicable."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "one/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "one/price",
+      "layer": "Price",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "one/description",
+      "layer": "Supporting description",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "generator-property",
+      "severity": "blocker",
+      "nodeId": "two/card",
+      "layer": "Annual Card",
+      "explanation": "Visual effects (DROP_SHADOW) are unsupported and omitted.",
+      "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+      "fix": "Implement this property manually or simplify the Figma specification."
+    },
+    {
+      "ruleId": "component-states",
+      "severity": "confirmation",
+      "nodeId": "two/card",
+      "layer": "Annual Card",
+      "explanation": "Component metadata is available; required state coverage is unknown.",
+      "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+      "fix": "Confirm which Android states are required; provide those designs if applicable."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "two/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "two/price",
+      "layer": "Price",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "two/description",
+      "layer": "Supporting description",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "touch-target",
+      "severity": "warning",
+      "nodeId": "button",
+      "layer": "Continue button",
+      "explanation": "Prototype ON_CLICK target is 358 × 40dp under the unit mapping.",
+      "impact": "The declared interactive target may be difficult to activate.",
+      "fix": "Provide at least a 48 × 48dp hit area or document an expanded Android touch target."
+    },
+    {
+      "ruleId": "prototype-action",
+      "severity": "confirmation",
+      "nodeId": "button",
+      "layer": "Continue button",
+      "explanation": "Prototype trigger ON_CLICK declares NODE.",
+      "impact": "Prototype behavior is documented but no click handler or business logic is generated. Needs confirmation.",
+      "fix": "Confirm runtime action, semantics, enabled state, and event ownership with the developer."
+    },
+    {
+      "ruleId": "component-states",
+      "severity": "confirmation",
+      "nodeId": "button",
+      "layer": "Continue button",
+      "explanation": "Component instance metadata is available; current variants: State=Default; required state coverage is unknown.",
+      "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+      "fix": "Confirm which Android states are required; provide those designs if applicable."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "button/label/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "generator-property",
+      "severity": "blocker",
+      "nodeId": "footer",
+      "layer": "Footer",
+      "explanation": "Only one solid fill is supported; GRADIENT_LINEAR requires manual implementation.",
+      "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+      "fix": "Implement this property manually or simplify the Figma specification."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "footer/label/title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "screen-insets",
+      "severity": "confirmation",
+      "nodeId": "screen",
+      "layer": "Plans Screen",
+      "explanation": "WindowInsets / safe-area policy cannot be determined from the selected Figma screen.",
+      "impact": "System bars, cutouts, and keyboard insets may overlap content. Needs confirmation.",
+      "fix": "Specify edge-to-edge behavior and apply WindowInsets in the host Android screen."
+    }
+  ],
+  "handoff": {
+    "frameworks": {
+      "compose": {
+        "framework": "compose",
+        "status": "CANNOT GENERATE RELIABLY",
+        "designStatus": "READY FOR DEV REVIEW",
+        "headline": "Your design can be reviewed, but this generated output needs manual implementation.",
+        "nextStep": "Review the generation blockers with your developer; do not use this output unchanged.",
+        "groups": [
+          {
+            "id": "missing-artwork",
+            "level": "P0",
+            "owner": "generator",
+            "title": "Visible artwork is replaced by placeholders",
+            "what": "Source artwork is absent from the generated package.",
+            "why": "The generated screen cannot faithfully reproduce these visible layers. Their decorative or essential role is not guessed.",
+            "next": "Supply the original assets and replace the placeholders in code. No design change is required.",
+            "evidence": "confirmed",
+            "blocksGeneration": true,
+            "layers": [
+              {
+                "id": "header/vector",
+                "name": "Complex logo vector",
+                "path": "Plans Screen / Header / Icon group / Complex logo vector"
+              },
+              {
+                "id": "hero",
+                "name": "Hero image",
+                "path": "Plans Screen / Scrollable content / Hero image"
+              }
+            ],
+            "roots": [
+              "header/icon",
+              "hero"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "header/vector",
+                "layer": "Complex logo vector",
+                "explanation": "Layer type VECTOR is unsupported; a bounds-preserving placeholder is exported.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              },
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "hero",
+                "layer": "Hero image",
+                "explanation": "Image asset is not extracted. A labeled placeholder drawable is generated; replace it with the source asset and verify crop/scale.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 2,
+            "occurrenceCount": 2
+          },
+          {
+            "id": "tap-area",
+            "level": "P1",
+            "owner": "developer",
+            "title": "Provide a comfortable tap area",
+            "what": "“Continue button” has a declared tap target measuring 358 × 40px.",
+            "why": "The visible control can keep its appearance while the app provides a larger hit area.",
+            "next": "Provide at least a 48 × 48dp hit area without forcing a change to the artwork.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "touch-target",
+                "severity": "warning",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Prototype ON_CLICK target is 358 × 40dp under the unit mapping.",
+                "impact": "The declared interactive target may be difficult to activate.",
+                "fix": "Provide at least a 48 × 48dp hit area or document an expanded Android touch target."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "visual-fidelity",
+            "level": "P1",
+            "owner": "generator",
+            "title": "Some visual appearance needs manual matching",
+            "what": "Some fills, transparency, transforms, or masks are not reproduced.",
+            "why": "The generated appearance can differ substantially from the design.",
+            "next": "Match these properties in code before reviewing visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "footer",
+                "name": "Footer",
+                "path": "Plans Screen / Footer"
+              }
+            ],
+            "roots": [
+              "footer"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "footer",
+                "layer": "Footer",
+                "explanation": "Only one solid fill is supported; GRADIENT_LINEAR requires manual implementation.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "font-resources",
+            "level": "P2",
+            "owner": "developer",
+            "title": "Map the specified fonts",
+            "what": "The design specifies font families and weights; generated text uses the platform fallback.",
+            "why": "Fallback fonts can change text wrapping and spacing.",
+            "next": "Add the specified licensed fonts or agree a replacement before checking visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "header/title",
+                "name": "Title",
+                "path": "Plans Screen / Header / Title"
+              },
+              {
+                "id": "section/title/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Title"
+              },
+              {
+                "id": "section/description/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Title"
+              },
+              {
+                "id": "one/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Title"
+              },
+              {
+                "id": "one/price",
+                "name": "Price",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Price"
+              },
+              {
+                "id": "one/description",
+                "name": "Supporting description",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Supporting description"
+              },
+              {
+                "id": "two/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Title"
+              },
+              {
+                "id": "two/price",
+                "name": "Price",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Price"
+              },
+              {
+                "id": "two/description",
+                "name": "Supporting description",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Supporting description"
+              },
+              {
+                "id": "button/label/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Continue button / Title"
+              },
+              {
+                "id": "footer/label/title",
+                "name": "Title",
+                "path": "Plans Screen / Footer / Title"
+              }
+            ],
+            "roots": [
+              "header/title",
+              "section/title/title",
+              "section/description/title",
+              "one/title",
+              "one/price",
+              "one/description",
+              "two/title",
+              "two/price",
+              "two/description",
+              "button/label/title",
+              "footer/label/title"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "header/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "section/title/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "section/description/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "button/label/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "footer/label/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              }
+            ],
+            "layerCount": 11,
+            "occurrenceCount": 11
+          },
+          {
+            "id": "accessibility-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Describe meaningful images",
+            "what": "The role of these images is unknown; decorative and meaningful images are not inferred from names.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Confirm image semantics when implementing accessibility.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "hero",
+                "name": "Hero image",
+                "path": "Plans Screen / Scrollable content / Hero image"
+              }
+            ],
+            "roots": [
+              "hero"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "image-description",
+                "severity": "confirmation",
+                "nodeId": "hero",
+                "layer": "Hero image",
+                "explanation": "Image semantics are unspecified.",
+                "impact": "Generated image has no spoken description until its accessibility role is defined in the app. Needs confirmation.",
+                "fix": "Confirm whether this image is decorative; otherwise provide an Android content description."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "component-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Use the observed component variants",
+            "what": "The current component and variant values are recorded; required alternatives were not inspected.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Implement states required by the feature. No missing state is asserted from a single instance.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "one/card",
+                "name": "Plan Card",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card"
+              },
+              {
+                "id": "two/card",
+                "name": "Annual Card",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card"
+              },
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "one/card",
+              "two/card",
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "one/card",
+                "layer": "Plan Card",
+                "explanation": "Component instance metadata is available; current variants: Plan=Pro; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              },
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "two/card",
+                "layer": "Annual Card",
+                "explanation": "Component metadata is available; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              },
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Component instance metadata is available; current variants: State=Default; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              }
+            ],
+            "layerCount": 3,
+            "occurrenceCount": 3
+          },
+          {
+            "id": "interaction-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Implement the specified interactions",
+            "what": "Prototype actions are recorded in the technical report.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Wire the declared actions to the app; no business logic is generated.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "prototype-action",
+                "severity": "confirmation",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Prototype trigger ON_CLICK declares NODE.",
+                "impact": "Prototype behavior is documented but no click handler or business logic is generated. Needs confirmation.",
+                "fix": "Confirm runtime action, semantics, enabled state, and event ownership with the developer."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "layout-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Review layout on the supported device sizes",
+            "what": "The report retains exact coordinates and measured bounds.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Use the declared layout and review resizing in the host app. Fixed positions and decorative overflow are not automatically design errors.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "header/icon",
+                "name": "Icon group",
+                "path": "Plans Screen / Header / Icon group"
+              }
+            ],
+            "roots": [
+              "header/icon"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "static-layout",
+                "severity": "confirmation",
+                "nodeId": "header/icon",
+                "layer": "Icon group",
+                "explanation": "Fixed-position layout preserves current coordinates; responsive behavior is unspecified.",
+                "impact": "Resizing this container may cause overlap. Needs confirmation.",
+                "fix": "Document resize behavior or add Auto Layout if this layout should adapt."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "scroll-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Explicit scrolling is mapped",
+            "what": "This bounded layout has a supported prototype scroll direction.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Verify gestures and scroll extent in the app.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "scroll",
+                "name": "Scrollable content",
+                "path": "Plans Screen / Scrollable content"
+              }
+            ],
+            "roots": [
+              "scroll"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "supported-scroll",
+                "severity": "info",
+                "nodeId": "scroll",
+                "layer": "Scrollable content",
+                "explanation": "Explicit vertical prototype scrolling maps to Android scroll containers.",
+                "impact": "Scroll direction is mapped; gesture parity has not been rendered or verified.",
+                "fix": "Verify scroll extent and gestures in the Android app."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "system-insets",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Handle system bars and the keyboard",
+            "what": "The selection does not establish a runtime system-bar or keyboard policy.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Apply the app’s inset policy and test the screen on a device. No inset sizes have been guessed.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "screen",
+                "name": "Plans Screen",
+                "path": "Plans Screen"
+              }
+            ],
+            "roots": [
+              "screen"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "screen-insets",
+                "severity": "confirmation",
+                "nodeId": "screen",
+                "layer": "Plans Screen",
+                "explanation": "WindowInsets / safe-area policy cannot be determined from the selected Figma screen.",
+                "impact": "System bars, cutouts, and keyboard insets may overlap content. Needs confirmation.",
+                "fix": "Specify edge-to-edge behavior and apply WindowInsets in the host Android screen."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "visual-details",
+            "level": "P3",
+            "owner": "generator",
+            "title": "Visual finishing details need manual matching",
+            "what": "Some effects, corners, or border styles are simplified.",
+            "why": "These finishing differences do not establish a critical design problem.",
+            "next": "Match these original details during visual review.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "two/card",
+                "name": "Annual Card",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card"
+              }
+            ],
+            "roots": [
+              "two/card"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "two/card",
+                "layer": "Annual Card",
+                "explanation": "Visual effects (DROP_SHADOW) are unsupported and omitted.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          }
+        ],
+        "primaryIds": [],
+        "optionalIds": [],
+        "criticalDesignerCount": 0,
+        "generationBlockerCount": 1,
+        "criticalSource": "generator",
+        "checks": [
+          "Basic layout structure mapped",
+          "Text content represented"
+        ]
+      },
+      "xml": {
+        "framework": "xml",
+        "status": "CANNOT GENERATE RELIABLY",
+        "designStatus": "READY FOR DEV REVIEW",
+        "headline": "Your design can be reviewed, but this generated output needs manual implementation.",
+        "nextStep": "Review the generation blockers with your developer; do not use this output unchanged.",
+        "groups": [
+          {
+            "id": "missing-artwork",
+            "level": "P0",
+            "owner": "generator",
+            "title": "Visible artwork is replaced by placeholders",
+            "what": "Source artwork is absent from the generated package.",
+            "why": "The generated screen cannot faithfully reproduce these visible layers. Their decorative or essential role is not guessed.",
+            "next": "Supply the original assets and replace the placeholders in code. No design change is required.",
+            "evidence": "confirmed",
+            "blocksGeneration": true,
+            "layers": [
+              {
+                "id": "header/vector",
+                "name": "Complex logo vector",
+                "path": "Plans Screen / Header / Icon group / Complex logo vector"
+              },
+              {
+                "id": "hero",
+                "name": "Hero image",
+                "path": "Plans Screen / Scrollable content / Hero image"
+              }
+            ],
+            "roots": [
+              "header/icon",
+              "hero"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "header/vector",
+                "layer": "Complex logo vector",
+                "explanation": "Layer type VECTOR is unsupported; a bounds-preserving placeholder is exported.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              },
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "hero",
+                "layer": "Hero image",
+                "explanation": "Image asset is not extracted. A labeled placeholder drawable is generated; replace it with the source asset and verify crop/scale.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 2,
+            "occurrenceCount": 2
+          },
+          {
+            "id": "tap-area",
+            "level": "P1",
+            "owner": "developer",
+            "title": "Provide a comfortable tap area",
+            "what": "“Continue button” has a declared tap target measuring 358 × 40px.",
+            "why": "The visible control can keep its appearance while the app provides a larger hit area.",
+            "next": "Provide at least a 48 × 48dp hit area without forcing a change to the artwork.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "touch-target",
+                "severity": "warning",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Prototype ON_CLICK target is 358 × 40dp under the unit mapping.",
+                "impact": "The declared interactive target may be difficult to activate.",
+                "fix": "Provide at least a 48 × 48dp hit area or document an expanded Android touch target."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "visual-fidelity",
+            "level": "P1",
+            "owner": "generator",
+            "title": "Some visual appearance needs manual matching",
+            "what": "Some fills, transparency, transforms, or masks are not reproduced.",
+            "why": "The generated appearance can differ substantially from the design.",
+            "next": "Match these properties in code before reviewing visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "footer",
+                "name": "Footer",
+                "path": "Plans Screen / Footer"
+              }
+            ],
+            "roots": [
+              "footer"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "footer",
+                "layer": "Footer",
+                "explanation": "Only one solid fill is supported; GRADIENT_LINEAR requires manual implementation.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "font-resources",
+            "level": "P2",
+            "owner": "developer",
+            "title": "Map the specified fonts",
+            "what": "The design specifies font families and weights; generated text uses the platform fallback.",
+            "why": "Fallback fonts can change text wrapping and spacing.",
+            "next": "Add the specified licensed fonts or agree a replacement before checking visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "header/title",
+                "name": "Title",
+                "path": "Plans Screen / Header / Title"
+              },
+              {
+                "id": "section/title/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Title"
+              },
+              {
+                "id": "section/description/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Title"
+              },
+              {
+                "id": "one/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Title"
+              },
+              {
+                "id": "one/price",
+                "name": "Price",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Price"
+              },
+              {
+                "id": "one/description",
+                "name": "Supporting description",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card / Supporting description"
+              },
+              {
+                "id": "two/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Title"
+              },
+              {
+                "id": "two/price",
+                "name": "Price",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Price"
+              },
+              {
+                "id": "two/description",
+                "name": "Supporting description",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card / Supporting description"
+              },
+              {
+                "id": "button/label/title",
+                "name": "Title",
+                "path": "Plans Screen / Scrollable content / Continue button / Title"
+              },
+              {
+                "id": "footer/label/title",
+                "name": "Title",
+                "path": "Plans Screen / Footer / Title"
+              }
+            ],
+            "roots": [
+              "header/title",
+              "section/title/title",
+              "section/description/title",
+              "one/title",
+              "one/price",
+              "one/description",
+              "two/title",
+              "two/price",
+              "two/description",
+              "button/label/title",
+              "footer/label/title"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "header/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "section/title/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "section/description/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "one/description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "two/description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "button/label/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "footer/label/title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              }
+            ],
+            "layerCount": 11,
+            "occurrenceCount": 11
+          },
+          {
+            "id": "accessibility-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Describe meaningful images",
+            "what": "The role of these images is unknown; decorative and meaningful images are not inferred from names.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Confirm image semantics when implementing accessibility.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "hero",
+                "name": "Hero image",
+                "path": "Plans Screen / Scrollable content / Hero image"
+              }
+            ],
+            "roots": [
+              "hero"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "image-description",
+                "severity": "confirmation",
+                "nodeId": "hero",
+                "layer": "Hero image",
+                "explanation": "Image semantics are unspecified.",
+                "impact": "Generated image has no spoken description until its accessibility role is defined in the app. Needs confirmation.",
+                "fix": "Confirm whether this image is decorative; otherwise provide an Android content description."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "component-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Use the observed component variants",
+            "what": "The current component and variant values are recorded; required alternatives were not inspected.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Implement states required by the feature. No missing state is asserted from a single instance.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "one/card",
+                "name": "Plan Card",
+                "path": "Plans Screen / Scrollable content / Content section / Plan Card"
+              },
+              {
+                "id": "two/card",
+                "name": "Annual Card",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card"
+              },
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "one/card",
+              "two/card",
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "one/card",
+                "layer": "Plan Card",
+                "explanation": "Component instance metadata is available; current variants: Plan=Pro; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              },
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "two/card",
+                "layer": "Annual Card",
+                "explanation": "Component metadata is available; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              },
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Component instance metadata is available; current variants: State=Default; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              }
+            ],
+            "layerCount": 3,
+            "occurrenceCount": 3
+          },
+          {
+            "id": "interaction-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Implement the specified interactions",
+            "what": "Prototype actions are recorded in the technical report.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Wire the declared actions to the app; no business logic is generated.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "button",
+                "name": "Continue button",
+                "path": "Plans Screen / Scrollable content / Continue button"
+              }
+            ],
+            "roots": [
+              "button"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "prototype-action",
+                "severity": "confirmation",
+                "nodeId": "button",
+                "layer": "Continue button",
+                "explanation": "Prototype trigger ON_CLICK declares NODE.",
+                "impact": "Prototype behavior is documented but no click handler or business logic is generated. Needs confirmation.",
+                "fix": "Confirm runtime action, semantics, enabled state, and event ownership with the developer."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "layout-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Review layout on the supported device sizes",
+            "what": "The report retains exact coordinates and measured bounds.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Use the declared layout and review resizing in the host app. Fixed positions and decorative overflow are not automatically design errors.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "header/icon",
+                "name": "Icon group",
+                "path": "Plans Screen / Header / Icon group"
+              }
+            ],
+            "roots": [
+              "header/icon"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "static-layout",
+                "severity": "confirmation",
+                "nodeId": "header/icon",
+                "layer": "Icon group",
+                "explanation": "Fixed-position layout preserves current coordinates; responsive behavior is unspecified.",
+                "impact": "Resizing this container may cause overlap. Needs confirmation.",
+                "fix": "Document resize behavior or add Auto Layout if this layout should adapt."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "scroll-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Explicit scrolling is mapped",
+            "what": "This bounded layout has a supported prototype scroll direction.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Verify gestures and scroll extent in the app.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "scroll",
+                "name": "Scrollable content",
+                "path": "Plans Screen / Scrollable content"
+              }
+            ],
+            "roots": [
+              "scroll"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "supported-scroll",
+                "severity": "info",
+                "nodeId": "scroll",
+                "layer": "Scrollable content",
+                "explanation": "Explicit vertical prototype scrolling maps to Android scroll containers.",
+                "impact": "Scroll direction is mapped; gesture parity has not been rendered or verified.",
+                "fix": "Verify scroll extent and gestures in the Android app."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "system-insets",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Handle system bars and the keyboard",
+            "what": "The selection does not establish a runtime system-bar or keyboard policy.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Apply the app’s inset policy and test the screen on a device. No inset sizes have been guessed.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "screen",
+                "name": "Plans Screen",
+                "path": "Plans Screen"
+              }
+            ],
+            "roots": [
+              "screen"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "screen-insets",
+                "severity": "confirmation",
+                "nodeId": "screen",
+                "layer": "Plans Screen",
+                "explanation": "WindowInsets / safe-area policy cannot be determined from the selected Figma screen.",
+                "impact": "System bars, cutouts, and keyboard insets may overlap content. Needs confirmation.",
+                "fix": "Specify edge-to-edge behavior and apply WindowInsets in the host Android screen."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          },
+          {
+            "id": "visual-details",
+            "level": "P3",
+            "owner": "generator",
+            "title": "Visual finishing details need manual matching",
+            "what": "Some effects, corners, or border styles are simplified.",
+            "why": "These finishing differences do not establish a critical design problem.",
+            "next": "Match these original details during visual review.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "two/card",
+                "name": "Annual Card",
+                "path": "Plans Screen / Scrollable content / Content section / Annual Card"
+              }
+            ],
+            "roots": [
+              "two/card"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "generator-property",
+                "severity": "blocker",
+                "nodeId": "two/card",
+                "layer": "Annual Card",
+                "explanation": "Visual effects (DROP_SHADOW) are unsupported and omitted.",
+                "impact": "Both generated implementations contain a partial representation / placeholder for this property.",
+                "fix": "Implement this property manually or simplify the Figma specification."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          }
+        ],
+        "primaryIds": [],
+        "optionalIds": [],
+        "criticalDesignerCount": 0,
+        "generationBlockerCount": 1,
+        "criticalSource": "generator",
+        "checks": [
+          "Basic layout structure mapped",
+          "Text content represented"
+        ]
+      }
+    },
+    "diagnosticCount": 24,
+    "audit": [
+      {
+        "index": 0,
+        "compose": "P3 · developer · layout-notes",
+        "xml": "P3 · developer · layout-notes"
+      },
+      {
+        "index": 1,
+        "compose": "P0 · generator · missing-artwork",
+        "xml": "P0 · generator · missing-artwork"
+      },
+      {
+        "index": 2,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 3,
+        "compose": "P3 · developer · scroll-notes",
+        "xml": "P3 · developer · scroll-notes"
+      },
+      {
+        "index": 4,
+        "compose": "P0 · generator · missing-artwork",
+        "xml": "P0 · generator · missing-artwork"
+      },
+      {
+        "index": 5,
+        "compose": "P3 · developer · accessibility-notes",
+        "xml": "P3 · developer · accessibility-notes"
+      },
+      {
+        "index": 6,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 7,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 8,
+        "compose": "P3 · developer · component-notes",
+        "xml": "P3 · developer · component-notes"
+      },
+      {
+        "index": 9,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 10,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 11,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 12,
+        "compose": "P3 · generator · visual-details",
+        "xml": "P3 · generator · visual-details"
+      },
+      {
+        "index": 13,
+        "compose": "P3 · developer · component-notes",
+        "xml": "P3 · developer · component-notes"
+      },
+      {
+        "index": 14,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 15,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 16,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 17,
+        "compose": "P1 · developer · tap-area",
+        "xml": "P1 · developer · tap-area"
+      },
+      {
+        "index": 18,
+        "compose": "P3 · developer · interaction-notes",
+        "xml": "P3 · developer · interaction-notes"
+      },
+      {
+        "index": 19,
+        "compose": "P3 · developer · component-notes",
+        "xml": "P3 · developer · component-notes"
+      },
+      {
+        "index": 20,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 21,
+        "compose": "P1 · generator · visual-fidelity",
+        "xml": "P1 · generator · visual-fidelity"
+      },
+      {
+        "index": 22,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 23,
+        "compose": "P3 · developer · system-insets",
+        "xml": "P3 · developer · system-insets"
+      }
+    ]
+  },
+  "passed": [
+    {
+      "nodeId": "screen",
+      "layer": "Plans Screen",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "header",
+      "layer": "Header",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "header/icon",
+      "layer": "Icon group",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "header/icon/background",
+      "layer": "Oval background",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "header/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "header/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "scroll",
+      "layer": "Scrollable content",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "scroll",
+      "layer": "Scrollable content",
+      "check": "Explicit scroll direction has a supported bounded Auto Layout configuration."
+    },
+    {
+      "nodeId": "content",
+      "layer": "Content section",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "section/title/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "section/title/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "section/description/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "section/description/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "one/card",
+      "layer": "Plan Card",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "one/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "one/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "one/price",
+      "layer": "Price",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "one/price",
+      "layer": "Price",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "one/description",
+      "layer": "Supporting description",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "one/description",
+      "layer": "Supporting description",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "two/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "two/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "two/price",
+      "layer": "Price",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "two/price",
+      "layer": "Price",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "two/description",
+      "layer": "Supporting description",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "two/description",
+      "layer": "Supporting description",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "button",
+      "layer": "Continue button",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "button/label/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "button/label/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "footer/label/title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "footer/label/title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    }
+  ],
+  "verification": {
+    "status": "Not build verified",
+    "visualFidelity": "Not rendered or compared"
+  }
+}

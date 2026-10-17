@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated draft; Android build verification has NOT been run. Requires API 28+. -->
+<!-- Figma node card: Pricing Card -->
+<LinearLayout
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dr_1"
+    android:layout_width="@dimen/dr_1_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top|start"
+    android:paddingTop="@dimen/dr_1_padding_top"
+    android:paddingEnd="@dimen/dr_1_padding_end"
+    android:paddingBottom="@dimen/dr_1_padding_bottom"
+    android:paddingStart="@dimen/dr_1_padding_start"
+    android:background="@drawable/dr_1_background">
+    <!-- Figma node title: Title -->
+    <!-- TODO: Map font Inter to an Android font resource. -->
+    <TextView
+        android:id="@+id/dr_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dr_2_text"
+        android:textSize="20sp"
+        android:includeFontPadding="false"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="700"
+        android:textStyle="normal"
+        android:letterSpacing="0"
+        android:gravity="left|top"
+        android:textColor="@color/dr_2_text" />
+    <!-- Figma node price: Price -->
+    <!-- TODO: Map font Inter to an Android font resource. -->
+    <TextView
+        android:id="@+id/dr_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dr_3_gap"
+        android:text="@string/dr_3_text"
+        android:textSize="32sp"
+        android:includeFontPadding="false"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="700"
+        android:textStyle="normal"
+        android:letterSpacing="0"
+        android:gravity="left|top"
+        android:textColor="@color/dr_3_text" />
+    <!-- Figma node description: Supporting description -->
+    <!-- TODO: Map font Inter to an Android font resource. -->
+    <TextView
+        android:id="@+id/dr_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dr_4_gap"
+        android:text="@string/dr_4_text"
+        android:textSize="14sp"
+        android:includeFontPadding="false"
+        android:fontFamily="sans-serif"
+        android:textFontWeight="400"
+        android:textStyle="normal"
+        android:letterSpacing="0"
+        android:gravity="left|top"
+        android:textColor="@color/dr_4_text" />
+</LinearLayout>

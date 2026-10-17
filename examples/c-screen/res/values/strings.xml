@@ -1,0 +1,13 @@
+<resources>
+    <string name="dr_6_text" formatted="false">"Explore plans"</string>
+    <string name="dr_10_text" formatted="false">"Choose your plan"</string>
+    <string name="dr_11_text" formatted="false">"All plans include the essentials."</string>
+    <string name="dr_13_text" formatted="false">"Pro plan"</string>
+    <string name="dr_14_text" formatted="false">"$12 / month"</string>
+    <string name="dr_15_text" formatted="false">"Everything you need to get started."</string>
+    <string name="dr_17_text" formatted="false">"Pro plan"</string>
+    <string name="dr_18_text" formatted="false">"$99 / year"</string>
+    <string name="dr_19_text" formatted="false">"Everything you need to get started."</string>
+    <string name="dr_21_text" formatted="false">"Continue"</string>
+    <string name="dr_23_text" formatted="false">"Terms apply"</string>
+</resources>

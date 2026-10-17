@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated draft; Android build verification has NOT been run. Requires API 28+. -->
+<!-- Figma node screen: Plans Screen -->
+<LinearLayout
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dr_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top|start"
+    android:background="@drawable/dr_1_background">
+    <!-- Figma node header: Header -->
+    <LinearLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:id="@+id/dr_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dr_2_height"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical">
+        <!-- Figma node header/icon: Icon group -->
+        <FrameLayout
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:id="@+id/dr_3"
+            android:layout_width="@dimen/dr_3_width"
+            android:layout_height="@dimen/dr_3_height">
+            <!-- Figma node header/icon/background: Oval background -->
+            <FrameLayout
+                android:id="@+id/dr_4"
+                android:layout_width="@dimen/dr_4_width"
+                android:layout_height="@dimen/dr_4_height"
+                android:layout_marginLeft="@dimen/dr_4_x"
+                android:layout_marginTop="@dimen/dr_4_y"
+                android:layout_gravity="top|left"
+                android:background="@drawable/dr_4_background" />
+            <!-- Figma node header/vector: Complex logo vector -->
+            <!-- TODO: Layer type VECTOR is unsupported; a bounds-preserving placeholder is exported. -->
+            <FrameLayout
+                android:id="@+id/dr_5"
+                android:layout_width="@dimen/dr_5_width"
+                android:layout_height="@dimen/dr_5_height"
+                android:layout_marginLeft="@dimen/dr_5_x"
+                android:layout_marginTop="@dimen/dr_5_y"
+                android:layout_gravity="top|left"
+                android:background="@drawable/dr_5_image_placeholder" />
+        </FrameLayout>
+        <!-- Figma node header/title: Title -->
+        <!-- TODO: Map font Inter to an Android font resource. -->
+        <TextView
+            android:id="@+id/dr_6"
+            android:layout_width="@dimen/dr_6_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dr_6_gap"
+            android:text="@string/dr_6_text"
+            android:textSize="20sp"
+            android:includeFontPadding="false"
+            android:fontFamily="sans-serif"
+            android:textFontWeight="400"
+            android:textStyle="normal"
+            android:letterSpacing="0"
+            android:gravity="left|top"
+            android:textColor="@color/dr_6_text" />
+    </LinearLayout>
+    <!-- Figma node scroll: Scrollable content -->
+    <ScrollView
+        android:clipChildren="true"
+        android:clipToPadding="false"
+        android:id="@+id/dr_7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dr_7_gap"
+        android:paddingTop="@dimen/dr_7_padding_top"
+        android:paddingEnd="@dimen/dr_7_padding_end"
+        android:paddingBottom="@dimen/dr_7_padding_bottom"
+        android:paddingStart="@dimen/dr_7_padding_start"
+        android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="top|start">
+            <!-- Figma node hero: Hero image -->
+            <!-- TODO: Replace image placeholder; confirm contentDescription and crop. -->
+            <!-- TODO: Image asset is not extracted. A labeled placeholder drawable is generated; replace it with the source asset and verify crop/scale. -->
+            <ImageView
+                android:id="@+id/dr_8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dr_8_height"
+                android:src="@drawable/dr_8_image_placeholder"
+                android:scaleType="fitCenter" />
+            <!-- Figma node content: Content section -->
+            <LinearLayout
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:id="@+id/dr_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dr_9_gap"
+                android:orientation="vertical"
+                android:gravity="top|start">
+                <!-- Figma node section/title/title: Title -->
+                <!-- TODO: Map font Inter to an Android font resource. -->
+                <TextView
+                    android:id="@+id/dr_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dr_10_text"
+                    android:textSize="24sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="400"
+                    android:textStyle="normal"
+                    android:letterSpacing="0"
+                    android:gravity="left|top"
+                    android:textColor="@color/dr_10_text" />
+                <!-- Figma node section/description/title: Title -->
+                <!-- TODO: Map font Inter to an Android font resource. -->
+                <TextView
+                    android:id="@+id/dr_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dr_11_gap"
+                    android:text="@string/dr_11_text"
+                    android:textSize="16sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="400"
+                    android:textStyle="normal"
+                    android:letterSpacing="0"
+                    android:gravity="left|top"
+                    android:textColor="@color/dr_11_text" />
+                <!-- Figma node one/card: Plan Card -->
+                <LinearLayout
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:id="@+id/dr_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dr_12_gap"
+                    android:orientation="vertical"
+                    android:gravity="top|start"
+                    android:paddingTop="@dimen/dr_12_padding_top"
+                    android:paddingEnd="@dimen/dr_12_padding_end"
+                    android:paddingBottom="@dimen/dr_12_padding_bottom"
+                    android:paddingStart="@dimen/dr_12_padding_start"
+                    android:background="@drawable/dr_12_background">
+                    <!-- Figma node one/title: Title -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dr_13_text"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="700"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_13_text" />
+                    <!-- Figma node one/price: Price -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dr_14_gap"
+                        android:text="@string/dr_14_text"
+                        android:textSize="32sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="700"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_14_text" />
+                    <!-- Figma node one/description: Supporting description -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dr_15_gap"
+                        android:text="@string/dr_15_text"
+                        android:textSize="14sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="400"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_15_text" />
+                </LinearLayout>
+                <!-- Figma node two/card: Annual Card -->
+                <!-- TODO: Visual effects (DROP_SHADOW) are unsupported and omitted. -->
+                <LinearLayout
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:id="@+id/dr_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dr_16_gap"
+                    android:orientation="vertical"
+                    android:gravity="top|start"
+                    android:paddingTop="@dimen/dr_16_padding_top"
+                    android:paddingEnd="@dimen/dr_16_padding_end"
+                    android:paddingBottom="@dimen/dr_16_padding_bottom"
+                    android:paddingStart="@dimen/dr_16_padding_start"
+                    android:background="@drawable/dr_16_background">
+                    <!-- Figma node two/title: Title -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dr_17_text"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="700"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_17_text" />
+                    <!-- Figma node two/price: Price -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dr_18_gap"
+                        android:text="@string/dr_18_text"
+                        android:textSize="32sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="700"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_18_text" />
+                    <!-- Figma node two/description: Supporting description -->
+                    <!-- TODO: Map font Inter to an Android font resource. -->
+                    <TextView
+                        android:id="@+id/dr_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dr_19_gap"
+                        android:text="@string/dr_19_text"
+                        android:textSize="14sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="400"
+                        android:textStyle="normal"
+                        android:letterSpacing="0"
+                        android:gravity="left|top"
+                        android:textColor="@color/dr_19_text" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Figma node button: Continue button -->
+            <!-- TODO: Confirm and implement prototype interaction semantics. -->
+            <LinearLayout
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:id="@+id/dr_20"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dr_20_height"
+                android:layout_marginTop="@dimen/dr_20_gap"
+                android:orientation="vertical"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@drawable/dr_20_background">
+                <!-- Figma node button/label/title: Title -->
+                <!-- TODO: Map font Inter to an Android font resource. -->
+                <TextView
+                    android:id="@+id/dr_21"
+                    android:layout_width="@dimen/dr_21_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dr_21_text"
+                    android:textSize="16sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="400"
+                    android:textStyle="normal"
+                    android:letterSpacing="0"
+                    android:gravity="left|top"
+                    android:textColor="@color/dr_21_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!-- Figma node footer: Footer -->
+    <!-- TODO: Only one solid fill is supported; GRADIENT_LINEAR requires manual implementation. -->
+    <LinearLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:id="@+id/dr_22"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dr_22_height"
+        android:layout_marginTop="@dimen/dr_22_gap"
+        android:orientation="vertical"
+        android:gravity="top|start">
+        <!-- Figma node footer/label/title: Title -->
+        <!-- TODO: Map font Inter to an Android font resource. -->
+        <TextView
+            android:id="@+id/dr_23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dr_23_text"
+            android:textSize="12sp"
+            android:includeFontPadding="false"
+            android:fontFamily="sans-serif"
+            android:textFontWeight="400"
+            android:textStyle="normal"
+            android:letterSpacing="0"
+            android:gravity="left|top"
+            android:textColor="@color/dr_23_text" />
+    </LinearLayout>
+</LinearLayout>

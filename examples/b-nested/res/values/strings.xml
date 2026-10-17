@@ -1,0 +1,5 @@
+<resources>
+    <string name="dr_3_text" formatted="false">"Pro plan"</string>
+    <string name="dr_4_text" formatted="false">"$12 / month"</string>
+    <string name="dr_5_text" formatted="false">"Everything you need to get started."</string>
+</resources>

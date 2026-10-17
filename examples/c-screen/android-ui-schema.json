@@ -1,0 +1,1383 @@
+{
+  "version": 2,
+  "mode": "screen",
+  "root": {
+    "id": "screen",
+    "name": "Plans Screen",
+    "sourceType": "FRAME",
+    "kind": "container",
+    "width": 390,
+    "height": 844,
+    "x": 0,
+    "y": 0,
+    "sizingX": "FIXED",
+    "sizingY": "FIXED",
+    "layout": "VERTICAL",
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 0,
+    "main": "MIN",
+    "cross": "MIN",
+    "fill": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "radius": 0,
+    "children": [
+      {
+        "id": "header",
+        "name": "Header",
+        "sourceType": "FRAME",
+        "kind": "container",
+        "width": 390,
+        "height": 56,
+        "x": 0,
+        "y": 0,
+        "sizingX": "FILL",
+        "sizingY": "FIXED",
+        "layout": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "gap": 12,
+        "main": "MIN",
+        "cross": "CENTER",
+        "radius": 0,
+        "children": [
+          {
+            "id": "header/icon",
+            "name": "Icon group",
+            "sourceType": "GROUP",
+            "kind": "container",
+            "width": 24,
+            "height": 24,
+            "x": 0,
+            "y": 0,
+            "sizingX": "FIXED",
+            "sizingY": "FIXED",
+            "layout": "NONE",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 0,
+            "main": "MIN",
+            "cross": "MIN",
+            "radius": 0,
+            "children": [
+              {
+                "id": "header/icon/background",
+                "name": "Oval background",
+                "sourceType": "ELLIPSE",
+                "kind": "ellipse",
+                "width": 24,
+                "height": 20,
+                "x": 0,
+                "y": 2,
+                "sizingX": "FIXED",
+                "sizingY": "FIXED",
+                "layout": "NONE",
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "gap": 0,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 0.9,
+                  "g": 0.9,
+                  "b": 0.95,
+                  "a": 1
+                },
+                "radius": 0,
+                "children": [],
+                "limitations": [],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9,
+                      "g": 0.9,
+                      "b": 0.95
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {}
+              },
+              {
+                "id": "header/vector",
+                "name": "Complex logo vector",
+                "sourceType": "VECTOR",
+                "kind": "unsupported",
+                "width": 24,
+                "height": 24,
+                "x": 0,
+                "y": 0,
+                "sizingX": "FIXED",
+                "sizingY": "FIXED",
+                "layout": "NONE",
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "gap": 0,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 0.2,
+                  "g": 0.3,
+                  "b": 0.4,
+                  "a": 1
+                },
+                "radius": 0,
+                "children": [],
+                "limitations": [
+                  "Layer type VECTOR is unsupported; a bounds-preserving placeholder is exported."
+                ],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.2,
+                      "g": 0.3,
+                      "b": 0.4
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {}
+              }
+            ],
+            "limitations": [],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [],
+            "effects": [],
+            "interactions": [],
+            "styleRefs": {},
+            "sourceProperties": {}
+          },
+          {
+            "id": "header/title",
+            "name": "Title",
+            "sourceType": "TEXT",
+            "kind": "text",
+            "width": 280,
+            "height": 24,
+            "x": 0,
+            "y": 0,
+            "sizingX": "FIXED",
+            "sizingY": "HUG",
+            "layout": "NONE",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 0,
+            "main": "MIN",
+            "cross": "MIN",
+            "fill": {
+              "r": 0.1,
+              "g": 0.12,
+              "b": 0.16,
+              "a": 1
+            },
+            "radius": 0,
+            "children": [],
+            "limitations": [],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.1,
+                  "g": 0.12,
+                  "b": 0.16
+                },
+                "opacity": 1
+              }
+            ],
+            "effects": [],
+            "interactions": [],
+            "styleRefs": {},
+            "sourceProperties": {},
+            "rawText": "Explore plans",
+            "text": {
+              "value": "Explore plans",
+              "size": 20,
+              "weight": 400,
+              "family": "Inter",
+              "italic": false,
+              "color": {
+                "r": 0.1,
+                "g": 0.12,
+                "b": 0.16,
+                "a": 1
+              },
+              "letterSpacing": 0,
+              "align": "LEFT",
+              "verticalAlign": "TOP",
+              "resize": "HEIGHT"
+            }
+          }
+        ],
+        "limitations": [],
+        "clipsContent": false,
+        "scroll": "NONE",
+        "scrollSupported": false,
+        "fixedWhenScrolling": false,
+        "paints": [],
+        "effects": [],
+        "interactions": [],
+        "styleRefs": {},
+        "sourceProperties": {}
+      },
+      {
+        "id": "scroll",
+        "name": "Scrollable content",
+        "sourceType": "FRAME",
+        "kind": "container",
+        "width": 390,
+        "height": 740,
+        "x": 0,
+        "y": 56,
+        "sizingX": "FILL",
+        "sizingY": "FILL",
+        "layout": "VERTICAL",
+        "padding": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "gap": 16,
+        "main": "MIN",
+        "cross": "MIN",
+        "radius": 0,
+        "children": [
+          {
+            "id": "hero",
+            "name": "Hero image",
+            "sourceType": "RECTANGLE",
+            "kind": "image",
+            "width": 358,
+            "height": 180,
+            "x": 16,
+            "y": 16,
+            "sizingX": "FILL",
+            "sizingY": "FIXED",
+            "layout": "NONE",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 0,
+            "main": "MIN",
+            "cross": "MIN",
+            "radius": 12,
+            "children": [],
+            "limitations": [
+              "Image asset is not extracted. A labeled placeholder drawable is generated; replace it with the source asset and verify crop/scale."
+            ],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [
+              {
+                "type": "IMAGE",
+                "imageHash": "fixture-image-hash",
+                "scaleMode": "FILL"
+              }
+            ],
+            "effects": [],
+            "interactions": [],
+            "styleRefs": {},
+            "sourceProperties": {},
+            "image": {
+              "hash": "fixture-image-hash",
+              "scaleMode": "FILL"
+            }
+          },
+          {
+            "id": "content",
+            "name": "Content section",
+            "sourceType": "FRAME",
+            "kind": "container",
+            "width": 358,
+            "height": 560,
+            "x": 16,
+            "y": 212,
+            "sizingX": "FILL",
+            "sizingY": "HUG",
+            "layout": "VERTICAL",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 16,
+            "main": "MIN",
+            "cross": "MIN",
+            "radius": 0,
+            "children": [
+              {
+                "id": "section/title/title",
+                "name": "Title",
+                "sourceType": "TEXT",
+                "kind": "text",
+                "width": 358,
+                "height": 24,
+                "x": 0,
+                "y": 0,
+                "sizingX": "FILL",
+                "sizingY": "HUG",
+                "layout": "NONE",
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "gap": 0,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 0.1,
+                  "g": 0.12,
+                  "b": 0.16,
+                  "a": 1
+                },
+                "radius": 0,
+                "children": [],
+                "limitations": [],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {},
+                "rawText": "Choose your plan",
+                "text": {
+                  "value": "Choose your plan",
+                  "size": 24,
+                  "weight": 400,
+                  "family": "Inter",
+                  "italic": false,
+                  "color": {
+                    "r": 0.1,
+                    "g": 0.12,
+                    "b": 0.16,
+                    "a": 1
+                  },
+                  "letterSpacing": 0,
+                  "align": "LEFT",
+                  "verticalAlign": "TOP",
+                  "resize": "HEIGHT"
+                }
+              },
+              {
+                "id": "section/description/title",
+                "name": "Title",
+                "sourceType": "TEXT",
+                "kind": "text",
+                "width": 358,
+                "height": 24,
+                "x": 0,
+                "y": 0,
+                "sizingX": "FILL",
+                "sizingY": "HUG",
+                "layout": "NONE",
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "gap": 0,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 0.1,
+                  "g": 0.12,
+                  "b": 0.16,
+                  "a": 1
+                },
+                "radius": 0,
+                "children": [],
+                "limitations": [],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {},
+                "rawText": "All plans include the essentials.",
+                "text": {
+                  "value": "All plans include the essentials.",
+                  "size": 16,
+                  "weight": 400,
+                  "family": "Inter",
+                  "italic": false,
+                  "color": {
+                    "r": 0.1,
+                    "g": 0.12,
+                    "b": 0.16,
+                    "a": 1
+                  },
+                  "letterSpacing": 0,
+                  "align": "LEFT",
+                  "verticalAlign": "TOP",
+                  "resize": "HEIGHT"
+                }
+              },
+              {
+                "id": "one/card",
+                "name": "Plan Card",
+                "sourceType": "INSTANCE",
+                "kind": "container",
+                "width": 358,
+                "height": 220,
+                "x": 0,
+                "y": 76,
+                "sizingX": "FILL",
+                "sizingY": "HUG",
+                "layout": "VERTICAL",
+                "padding": [
+                  24,
+                  24,
+                  24,
+                  24
+                ],
+                "gap": 12,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "radius": 16,
+                "children": [
+                  {
+                    "id": "one/title",
+                    "name": "Title",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "Pro plan",
+                    "text": {
+                      "value": "Pro plan",
+                      "size": 20,
+                      "weight": 700,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  },
+                  {
+                    "id": "one/price",
+                    "name": "Price",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "$12 / month",
+                    "text": {
+                      "value": "$12 / month",
+                      "size": 32,
+                      "weight": 700,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  },
+                  {
+                    "id": "one/description",
+                    "name": "Supporting description",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "Everything you need to get started.",
+                    "text": {
+                      "value": "Everything you need to get started.",
+                      "size": 14,
+                      "weight": 400,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  }
+                ],
+                "limitations": [],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {},
+                "component": {
+                  "description": "Simple pricing card",
+                  "instance": true,
+                  "variants": {
+                    "Plan": "Pro"
+                  }
+                }
+              },
+              {
+                "id": "two/card",
+                "name": "Annual Card",
+                "sourceType": "COMPONENT",
+                "kind": "container",
+                "width": 358,
+                "height": 220,
+                "x": 0,
+                "y": 312,
+                "sizingX": "FILL",
+                "sizingY": "HUG",
+                "layout": "VERTICAL",
+                "padding": [
+                  24,
+                  24,
+                  24,
+                  24
+                ],
+                "gap": 12,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "radius": 16,
+                "children": [
+                  {
+                    "id": "two/title",
+                    "name": "Title",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "Pro plan",
+                    "text": {
+                      "value": "Pro plan",
+                      "size": 20,
+                      "weight": 700,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  },
+                  {
+                    "id": "two/price",
+                    "name": "Price",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "$99 / year",
+                    "text": {
+                      "value": "$99 / year",
+                      "size": 32,
+                      "weight": 700,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  },
+                  {
+                    "id": "two/description",
+                    "name": "Supporting description",
+                    "sourceType": "TEXT",
+                    "kind": "text",
+                    "width": 272,
+                    "height": 30,
+                    "x": 24,
+                    "y": 24,
+                    "sizingX": "FILL",
+                    "sizingY": "HUG",
+                    "layout": "NONE",
+                    "padding": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "gap": 0,
+                    "main": "MIN",
+                    "cross": "MIN",
+                    "fill": {
+                      "r": 0.1,
+                      "g": 0.12,
+                      "b": 0.16,
+                      "a": 1
+                    },
+                    "radius": 0,
+                    "children": [],
+                    "limitations": [],
+                    "clipsContent": false,
+                    "scroll": "NONE",
+                    "scrollSupported": false,
+                    "fixedWhenScrolling": false,
+                    "paints": [
+                      {
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.1,
+                          "g": 0.12,
+                          "b": 0.16
+                        },
+                        "opacity": 1
+                      }
+                    ],
+                    "effects": [],
+                    "interactions": [],
+                    "styleRefs": {},
+                    "sourceProperties": {},
+                    "rawText": "Everything you need to get started.",
+                    "text": {
+                      "value": "Everything you need to get started.",
+                      "size": 14,
+                      "weight": 400,
+                      "family": "Inter",
+                      "italic": false,
+                      "color": {
+                        "r": 0.1,
+                        "g": 0.12,
+                        "b": 0.16,
+                        "a": 1
+                      },
+                      "letterSpacing": 0,
+                      "align": "LEFT",
+                      "verticalAlign": "TOP",
+                      "resize": "HEIGHT"
+                    }
+                  }
+                ],
+                "limitations": [
+                  "Visual effects (DROP_SHADOW) are unsupported and omitted."
+                ],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "visible": true,
+                    "radius": 8,
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.12
+                    }
+                  }
+                ],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {},
+                "component": {
+                  "key": "pricing-card",
+                  "description": "Simple pricing card",
+                  "instance": false
+                }
+              }
+            ],
+            "limitations": [],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [],
+            "effects": [],
+            "interactions": [],
+            "styleRefs": {},
+            "sourceProperties": {}
+          },
+          {
+            "id": "button",
+            "name": "Continue button",
+            "sourceType": "INSTANCE",
+            "kind": "container",
+            "width": 358,
+            "height": 40,
+            "x": 16,
+            "y": 788,
+            "sizingX": "FILL",
+            "sizingY": "FIXED",
+            "layout": "VERTICAL",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 16,
+            "main": "CENTER",
+            "cross": "CENTER",
+            "fill": {
+              "r": 0.1,
+              "g": 0.3,
+              "b": 0.8,
+              "a": 1
+            },
+            "radius": 0,
+            "children": [
+              {
+                "id": "button/label/title",
+                "name": "Title",
+                "sourceType": "TEXT",
+                "kind": "text",
+                "width": 120,
+                "height": 24,
+                "x": 0,
+                "y": 0,
+                "sizingX": "FIXED",
+                "sizingY": "HUG",
+                "layout": "NONE",
+                "padding": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "gap": 0,
+                "main": "MIN",
+                "cross": "MIN",
+                "fill": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "radius": 0,
+                "children": [],
+                "limitations": [],
+                "clipsContent": false,
+                "scroll": "NONE",
+                "scrollSupported": false,
+                "fixedWhenScrolling": false,
+                "paints": [
+                  {
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "opacity": 1
+                  }
+                ],
+                "effects": [],
+                "interactions": [],
+                "styleRefs": {},
+                "sourceProperties": {},
+                "rawText": "Continue",
+                "text": {
+                  "value": "Continue",
+                  "size": 16,
+                  "weight": 400,
+                  "family": "Inter",
+                  "italic": false,
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1,
+                    "a": 1
+                  },
+                  "letterSpacing": 0,
+                  "align": "LEFT",
+                  "verticalAlign": "TOP",
+                  "resize": "HEIGHT"
+                }
+              }
+            ],
+            "limitations": [],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.1,
+                  "g": 0.3,
+                  "b": 0.8
+                },
+                "opacity": 1
+              }
+            ],
+            "effects": [],
+            "interactions": [
+              {
+                "trigger": "ON_CLICK",
+                "actions": [
+                  "NODE"
+                ]
+              }
+            ],
+            "styleRefs": {},
+            "sourceProperties": {
+              "reactions": [
+                {
+                  "trigger": {
+                    "type": "ON_CLICK"
+                  },
+                  "actions": [
+                    {
+                      "type": "NODE",
+                      "destinationId": "checkout"
+                    }
+                  ]
+                }
+              ]
+            },
+            "component": {
+              "instance": true,
+              "variants": {
+                "State": "Default"
+              }
+            }
+          }
+        ],
+        "limitations": [],
+        "clipsContent": true,
+        "scroll": "VERTICAL",
+        "scrollSupported": true,
+        "fixedWhenScrolling": false,
+        "paints": [],
+        "effects": [],
+        "interactions": [],
+        "styleRefs": {},
+        "sourceProperties": {}
+      },
+      {
+        "id": "footer",
+        "name": "Footer",
+        "sourceType": "FRAME",
+        "kind": "container",
+        "width": 390,
+        "height": 48,
+        "x": 0,
+        "y": 796,
+        "sizingX": "FILL",
+        "sizingY": "FIXED",
+        "layout": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "gap": 16,
+        "main": "MIN",
+        "cross": "MIN",
+        "radius": 0,
+        "children": [
+          {
+            "id": "footer/label/title",
+            "name": "Title",
+            "sourceType": "TEXT",
+            "kind": "text",
+            "width": 358,
+            "height": 24,
+            "x": 0,
+            "y": 0,
+            "sizingX": "FILL",
+            "sizingY": "HUG",
+            "layout": "NONE",
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gap": 0,
+            "main": "MIN",
+            "cross": "MIN",
+            "fill": {
+              "r": 0.1,
+              "g": 0.12,
+              "b": 0.16,
+              "a": 1
+            },
+            "radius": 0,
+            "children": [],
+            "limitations": [],
+            "clipsContent": false,
+            "scroll": "NONE",
+            "scrollSupported": false,
+            "fixedWhenScrolling": false,
+            "paints": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.1,
+                  "g": 0.12,
+                  "b": 0.16
+                },
+                "opacity": 1
+              }
+            ],
+            "effects": [],
+            "interactions": [],
+            "styleRefs": {},
+            "sourceProperties": {},
+            "rawText": "Terms apply",
+            "text": {
+              "value": "Terms apply",
+              "size": 12,
+              "weight": 400,
+              "family": "Inter",
+              "italic": false,
+              "color": {
+                "r": 0.1,
+                "g": 0.12,
+                "b": 0.16,
+                "a": 1
+              },
+              "letterSpacing": 0,
+              "align": "LEFT",
+              "verticalAlign": "TOP",
+              "resize": "HEIGHT"
+            }
+          }
+        ],
+        "limitations": [
+          "Only one solid fill is supported; GRADIENT_LINEAR requires manual implementation."
+        ],
+        "clipsContent": false,
+        "scroll": "NONE",
+        "scrollSupported": false,
+        "fixedWhenScrolling": false,
+        "paints": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "gradientStops": [
+              {
+                "position": 0,
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                }
+              },
+              {
+                "position": 1,
+                "color": {
+                  "r": 0.9,
+                  "g": 0.9,
+                  "b": 1,
+                  "a": 1
+                }
+              }
+            ],
+            "gradientTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
+          }
+        ],
+        "effects": [],
+        "interactions": [],
+        "styleRefs": {},
+        "sourceProperties": {}
+      }
+    ],
+    "limitations": [],
+    "clipsContent": false,
+    "scroll": "NONE",
+    "scrollSupported": false,
+    "fixedWhenScrolling": false,
+    "paints": [
+      {
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "opacity": 1
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "styleRefs": {},
+    "sourceProperties": {
+      "androidHostViewport": true
+    }
+  },
+  "assumptions": [
+    "Figma px map to Android dp; text px map to sp at default font scale.",
+    "Fonts require developer-provided Android font resources; platform fallback is generated.",
+    "Auto Layout horizontal alignment and padding map to logical start/end; fixed-position coordinates remain physical. Confirm RTL requirements.",
+    "Not build verified. Generated code has not been verified for this selection on Android.",
+    "Screen root fills the host viewport; child dimensions retain Figma sizing intent. Insets need confirmation."
+  ]
+}

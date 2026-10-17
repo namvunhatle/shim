@@ -1,0 +1,358 @@
+{
+  "overview": {
+    "total": 4,
+    "supported": 4,
+    "artwork": 0,
+    "unsupported": 0,
+    "byType": {
+      "COMPONENT": 1,
+      "TEXT": 3
+    }
+  },
+  "assumptions": [
+    "Figma px map to Android dp; text px map to sp at default font scale.",
+    "Fonts require developer-provided Android font resources; platform fallback is generated.",
+    "Auto Layout horizontal alignment and padding map to logical start/end; fixed-position coordinates remain physical. Confirm RTL requirements.",
+    "Not build verified. Generated code has not been verified for this selection on Android."
+  ],
+  "issues": [
+    {
+      "ruleId": "component-states",
+      "severity": "confirmation",
+      "nodeId": "card",
+      "layer": "Pricing Card",
+      "explanation": "Component metadata is available; required state coverage is unknown.",
+      "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+      "fix": "Confirm which Android states are required; provide those designs if applicable."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "title",
+      "layer": "Title",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "price",
+      "layer": "Price",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    },
+    {
+      "ruleId": "font-mapping",
+      "severity": "confirmation",
+      "nodeId": "description",
+      "layer": "Supporting description",
+      "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+      "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+      "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+    }
+  ],
+  "handoff": {
+    "frameworks": {
+      "compose": {
+        "framework": "compose",
+        "status": "READY FOR DEV REVIEW",
+        "designStatus": "READY FOR DEV REVIEW",
+        "headline": "No confirmed critical or important designer-owned issues found.",
+        "nextStep": "Share the design for developer review. Optional improvements do not block handoff.",
+        "groups": [
+          {
+            "id": "font-resources",
+            "level": "P2",
+            "owner": "developer",
+            "title": "Map the specified fonts",
+            "what": "The design specifies font families and weights; generated text uses the platform fallback.",
+            "why": "Fallback fonts can change text wrapping and spacing.",
+            "next": "Add the specified licensed fonts or agree a replacement before checking visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "title",
+                "name": "Title",
+                "path": "Pricing Card / Title"
+              },
+              {
+                "id": "price",
+                "name": "Price",
+                "path": "Pricing Card / Price"
+              },
+              {
+                "id": "description",
+                "name": "Supporting description",
+                "path": "Pricing Card / Supporting description"
+              }
+            ],
+            "roots": [
+              "title",
+              "price",
+              "description"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              }
+            ],
+            "layerCount": 3,
+            "occurrenceCount": 3
+          },
+          {
+            "id": "component-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Use the observed component variants",
+            "what": "The current component and variant values are recorded; required alternatives were not inspected.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Implement states required by the feature. No missing state is asserted from a single instance.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "card",
+                "name": "Pricing Card",
+                "path": "Pricing Card"
+              }
+            ],
+            "roots": [
+              "card"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "card",
+                "layer": "Pricing Card",
+                "explanation": "Component metadata is available; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          }
+        ],
+        "primaryIds": [],
+        "optionalIds": [],
+        "criticalDesignerCount": 0,
+        "generationBlockerCount": 0,
+        "criticalSource": null,
+        "checks": [
+          "Basic layout structure mapped",
+          "Text content represented",
+          "Visible content represented"
+        ]
+      },
+      "xml": {
+        "framework": "xml",
+        "status": "READY FOR DEV REVIEW",
+        "designStatus": "READY FOR DEV REVIEW",
+        "headline": "No confirmed critical or important designer-owned issues found.",
+        "nextStep": "Share the design for developer review. Optional improvements do not block handoff.",
+        "groups": [
+          {
+            "id": "font-resources",
+            "level": "P2",
+            "owner": "developer",
+            "title": "Map the specified fonts",
+            "what": "The design specifies font families and weights; generated text uses the platform fallback.",
+            "why": "Fallback fonts can change text wrapping and spacing.",
+            "next": "Add the specified licensed fonts or agree a replacement before checking visual fidelity.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "title",
+                "name": "Title",
+                "path": "Pricing Card / Title"
+              },
+              {
+                "id": "price",
+                "name": "Price",
+                "path": "Pricing Card / Price"
+              },
+              {
+                "id": "description",
+                "name": "Supporting description",
+                "path": "Pricing Card / Supporting description"
+              }
+            ],
+            "roots": [
+              "title",
+              "price",
+              "description"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "title",
+                "layer": "Title",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "price",
+                "layer": "Price",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              },
+              {
+                "ruleId": "font-mapping",
+                "severity": "confirmation",
+                "nodeId": "description",
+                "layer": "Supporting description",
+                "explanation": "Font “Inter” needs Android mapping; generated code uses the platform font.",
+                "impact": "Font metrics and line wrapping can differ. Needs confirmation.",
+                "fix": "Supply a licensed font resource and map its weight/style in both implementations."
+              }
+            ],
+            "layerCount": 3,
+            "occurrenceCount": 3
+          },
+          {
+            "id": "component-notes",
+            "level": "P3",
+            "owner": "developer",
+            "title": "Use the observed component variants",
+            "what": "The current component and variant values are recorded; required alternatives were not inspected.",
+            "why": "This is a normal implementation responsibility, not an established design defect.",
+            "next": "Implement states required by the feature. No missing state is asserted from a single instance.",
+            "evidence": "confirmed",
+            "blocksGeneration": false,
+            "layers": [
+              {
+                "id": "card",
+                "name": "Pricing Card",
+                "path": "Pricing Card"
+              }
+            ],
+            "roots": [
+              "card"
+            ],
+            "diagnostics": [
+              {
+                "ruleId": "component-states",
+                "severity": "confirmation",
+                "nodeId": "card",
+                "layer": "Pricing Card",
+                "explanation": "Component metadata is available; required state coverage is unknown.",
+                "impact": "No missing state is asserted from names or a single variant. Needs confirmation.",
+                "fix": "Confirm which Android states are required; provide those designs if applicable."
+              }
+            ],
+            "layerCount": 1,
+            "occurrenceCount": 1
+          }
+        ],
+        "primaryIds": [],
+        "optionalIds": [],
+        "criticalDesignerCount": 0,
+        "generationBlockerCount": 0,
+        "criticalSource": null,
+        "checks": [
+          "Basic layout structure mapped",
+          "Text content represented",
+          "Visible content represented"
+        ]
+      }
+    },
+    "diagnosticCount": 4,
+    "audit": [
+      {
+        "index": 0,
+        "compose": "P3 · developer · component-notes",
+        "xml": "P3 · developer · component-notes"
+      },
+      {
+        "index": 1,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 2,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      },
+      {
+        "index": 3,
+        "compose": "P2 · developer · font-resources",
+        "xml": "P2 · developer · font-resources"
+      }
+    ]
+  },
+  "passed": [
+    {
+      "nodeId": "card",
+      "layer": "Pricing Card",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "title",
+      "layer": "Title",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "title",
+      "layer": "Title",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "price",
+      "layer": "Price",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "price",
+      "layer": "Price",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    },
+    {
+      "nodeId": "description",
+      "layer": "Supporting description",
+      "check": "Layer structure and basic visual properties map to both generators."
+    },
+    {
+      "nodeId": "description",
+      "layer": "Supporting description",
+      "check": "Uniform font size, weight, family, and finite text metrics were parsed."
+    }
+  ],
+  "verification": {
+    "status": "Not build verified",
+    "visualFidelity": "Not rendered or compared"
+  }
+}

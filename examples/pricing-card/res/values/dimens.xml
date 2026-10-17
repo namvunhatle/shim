@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="dr_1_width">320dp</dimen>
+    <dimen name="dr_1_padding_top">24dp</dimen>
+    <dimen name="dr_1_padding_end">24dp</dimen>
+    <dimen name="dr_1_padding_bottom">24dp</dimen>
+    <dimen name="dr_1_padding_start">24dp</dimen>
+    <dimen name="dr_1_radius">16dp</dimen>
+    <dimen name="dr_3_gap">12dp</dimen>
+    <dimen name="dr_4_gap">12dp</dimen>
+</resources>

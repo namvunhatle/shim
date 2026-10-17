@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.test-build/
+.android-verification/
+.DS_Store
+# private real-world capture, not published
+tests/fixtures/halloween-paywall.json
+verification/halloween-*
+# design working files: renders are regenerated, only sources and the Community assets are kept
+design/shots/
+design/explore.html
+design/*.mjs
+design/community/*.html

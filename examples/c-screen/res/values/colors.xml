@@ -1,0 +1,19 @@
+<resources>
+    <color name="dr_1_background">#FFFFFFFF</color>
+    <color name="dr_4_background">#FFE6E6F2</color>
+    <color name="dr_5_background">#FF334D66</color>
+    <color name="dr_6_text">#FF1A1F29</color>
+    <color name="dr_10_text">#FF1A1F29</color>
+    <color name="dr_11_text">#FF1A1F29</color>
+    <color name="dr_12_background">#FFFFFFFF</color>
+    <color name="dr_13_text">#FF1A1F29</color>
+    <color name="dr_14_text">#FF1A1F29</color>
+    <color name="dr_15_text">#FF1A1F29</color>
+    <color name="dr_16_background">#FFFFFFFF</color>
+    <color name="dr_17_text">#FF1A1F29</color>
+    <color name="dr_18_text">#FF1A1F29</color>
+    <color name="dr_19_text">#FF1A1F29</color>
+    <color name="dr_20_background">#FF1A4DCC</color>
+    <color name="dr_21_text">#FFFFFFFF</color>
+    <color name="dr_23_text">#FF1A1F29</color>
+</resources>

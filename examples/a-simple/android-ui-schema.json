@@ -1,0 +1,136 @@
+{
+  "version": 2,
+  "mode": "component",
+  "root": {
+    "id": "card",
+    "name": "Simple Component",
+    "sourceType": "COMPONENT",
+    "kind": "container",
+    "width": 320,
+    "height": 220,
+    "x": 0,
+    "y": 0,
+    "sizingX": "FIXED",
+    "sizingY": "HUG",
+    "layout": "VERTICAL",
+    "padding": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "gap": 12,
+    "main": "MIN",
+    "cross": "MIN",
+    "fill": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "radius": 16,
+    "children": [
+      {
+        "id": "title",
+        "name": "Title",
+        "sourceType": "TEXT",
+        "kind": "text",
+        "width": 272,
+        "height": 30,
+        "x": 24,
+        "y": 24,
+        "sizingX": "FILL",
+        "sizingY": "HUG",
+        "layout": "NONE",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "gap": 0,
+        "main": "MIN",
+        "cross": "MIN",
+        "fill": {
+          "r": 0.1,
+          "g": 0.12,
+          "b": 0.16,
+          "a": 1
+        },
+        "radius": 0,
+        "children": [],
+        "limitations": [],
+        "clipsContent": false,
+        "scroll": "NONE",
+        "scrollSupported": false,
+        "fixedWhenScrolling": false,
+        "paints": [
+          {
+            "type": "SOLID",
+            "color": {
+              "r": 0.1,
+              "g": 0.12,
+              "b": 0.16
+            },
+            "opacity": 1
+          }
+        ],
+        "effects": [],
+        "interactions": [],
+        "styleRefs": {},
+        "sourceProperties": {},
+        "rawText": "Hello Android",
+        "text": {
+          "value": "Hello Android",
+          "size": 20,
+          "weight": 700,
+          "family": "Inter",
+          "italic": false,
+          "color": {
+            "r": 0.1,
+            "g": 0.12,
+            "b": 0.16,
+            "a": 1
+          },
+          "letterSpacing": 0,
+          "align": "LEFT",
+          "verticalAlign": "TOP",
+          "resize": "HEIGHT"
+        }
+      }
+    ],
+    "limitations": [],
+    "clipsContent": false,
+    "scroll": "NONE",
+    "scrollSupported": false,
+    "fixedWhenScrolling": false,
+    "paints": [
+      {
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "opacity": 1
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "styleRefs": {},
+    "sourceProperties": {
+      "androidHostViewport": false
+    },
+    "component": {
+      "key": "pricing-card",
+      "description": "Simple pricing card",
+      "instance": false
+    }
+  },
+  "assumptions": [
+    "Figma px map to Android dp; text px map to sp at default font scale.",
+    "Fonts require developer-provided Android font resources; platform fallback is generated.",
+    "Auto Layout horizontal alignment and padding map to logical start/end; fixed-position coordinates remain physical. Confirm RTL requirements.",
+    "Not build verified. Generated code has not been verified for this selection on Android."
+  ]
+}
