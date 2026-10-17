@@ -35,7 +35,7 @@ export function renderReadiness(analysis:Analysis,locate:(ids:string[])=>void,fr
  el('design-verdict').textContent=report.status==='CANNOT GENERATE RELIABLY'?`Design handoff: ${label(report.designStatus)}. ${report.designStatus==='NEEDS ATTENTION'?'Resolve the design actions below; generation gaps require developer work.':report.criticalSource==='design'?'A design decision needs resolving.':report.criticalSource==='both'?'Design decisions and generator gaps both apply.':'This is a generator limitation, not a request to redesign.'}`:'';
  const primary=report.primaryIds.map(id=>report.groups.find(g=>g.id===id)!);
  const optional=report.optionalIds.map(id=>report.groups.find(g=>g.id===id)!);
- el('readiness-counts').textContent=primary.length?`${primary.length} ${primary.length===1?'thing':'things'} to address before handoff${report.criticalDesignerCount?` · ${report.criticalDesignerCount} critical`:''}`:'No required design changes found by these checks.';
+ el('readiness-counts').textContent=primary.length?(()=>{const sentence=`${primary.length} ${primary.length===1?'thing':'things'} to address before handoff`,critical=report.criticalDesignerCount?`critical: ${report.criticalDesignerCount}`:'';return report.headline.includes(sentence)?critical:`${sentence}${critical?` · ${critical}`:''}`;})():'No required design changes found by these checks.';
  el('next-step').textContent=report.nextStep;
  gauge(primary.length?primary:report.groups.filter(g=>g.level==="P0"));
  for(const check of report.checks)el('positive-checks').append(element('li','',`✓ ${check}`));
@@ -53,7 +53,7 @@ export function renderReadiness(analysis:Analysis,locate:(ids:string[])=>void,fr
  const dev=report.groups.filter(g=>g.owner==='developer');(el('developer-notes') as HTMLDetailsElement).hidden=!dev.length;el('developer-title').textContent='Developer notes';dev.forEach(g=>el('developer-list').append(card(g,locate,target)));
  // Include every P0 generation risk, including a design-owned generation ambiguity if present.
  const generation=report.groups.filter(g=>g.owner==='generator'||g.blocksGeneration);(el('generation-limits') as HTMLDetailsElement).hidden=!generation.length;el('generation-title').textContent=`Generation limitations${critical.length?` · ${critical.length} critical`:''}`;generation.forEach(g=>el('generation-list').append(card(g,locate,target)));
- const review=el('review-next') as HTMLButtonElement;review.hidden=!primary.length;review.textContent='Start with the first action';review.onclick=()=>{const first=cards[0];first.scrollIntoView?.({block:'nearest'});const how=first.querySelector('details')!;how.open=true;how.querySelector('summary')?.focus();};
+ const review=el('review-next') as HTMLButtonElement;review.hidden=!primary.length;review.textContent='Show me what to fix';review.onclick=()=>{const first=cards[0];first.scrollIntoView?.({block:'nearest'});const how=first.querySelector('details')!;how.open=true;how.querySelector('summary')?.focus();};
  el('technical-count').textContent=`Technical details · ${analysis.issues.length} original observations`;
  for(const check of analysis.passed)el('passed').append(element('p','',`✓ ${check.layer}: ${check.check}`));
  const technical=el('technical-report') as HTMLDetailsElement;technical.ontoggle=()=>{if(technical.open&&!target.childNodes.length){allDiagnostics();}};
