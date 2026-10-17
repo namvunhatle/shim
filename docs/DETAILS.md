@@ -43,7 +43,7 @@ For that historical release, the connection/header showed **0.4.0**. Refresh sel
 Requires Node.js 20.19+, npm, Python 3 (XML verification tests), and Figma desktop for development-plugin import.
 
 ```sh
-cd /Users/namvunhatle/Downloads/Plugin
+cd path/to/shim
 npm ci
 npm run check
 ```
