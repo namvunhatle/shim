@@ -2,6 +2,7 @@ import { Analysis } from './pipeline';
 import { SelectionMode } from './schema';
 import { renderReadiness, clearReadiness } from './readiness-ui';
 import { zip } from './zip';
+import { handoffFiles } from './handoff';
 const el=(id:string)=>document.getElementById(id)!;
 const button=(id:string)=>el(id) as HTMLButtonElement;
 const files=el('files') as HTMLSelectElement,mode=el('mode') as HTMLSelectElement;
@@ -24,7 +25,7 @@ button('copy').onclick=async()=>{
 };
 button('export').onclick=()=>{
  if(!result)return;
- const payload=zip([...result.compose,...result.xml,{path:'readiness.json',content:JSON.stringify({overview:result.overview,assumptions:result.schema.assumptions,issues:result.issues,handoff:result.readiness,activeFramework:tab,passed:result.passed,verification:result.verification},null,2)},{path:'android-ui-schema.json',content:JSON.stringify(result.schema,null,2)},{path:'HANDOFF.txt',content:'Shim generated draft. Not build verified. No visual rendering/comparison. XML requires API 28+. Compose requires Material3 and resources from res/. Generated package: shim.generated; update package/R namespace for your app. Exported artwork PNGs are raster assets at 2×. Any remaining placeholders are NOT source artwork. Review both framework evaluations in readiness.json. Address confirmed designer actions and critical generator limitations separately. Developer notes cover fonts, WindowInsets, assets and theme tokens. Test resizing/localization/font scaling. Figma px map to dp and text sp. No business logic or interaction semantics are invented.'}]);
+ const payload=zip(handoffFiles(result));
  const url=URL.createObjectURL(new Blob([payload as BlobPart],{type:'application/zip'}));const a=document.createElement('a');a.href=url;a.download='shim-handoff.zip';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);el('message').textContent='Exported both implementations, artwork, resources, schema and readiness report.';
 };
 window.onmessage=(event:MessageEvent)=>{
@@ -45,7 +46,7 @@ window.onmessage=(event:MessageEvent)=>{
   if(m.requestId!==requestId)return;
   result=m.result;button('analyze').disabled=!validSelection;
   el('overview').textContent=`${result!.schema.mode==='screen'?'Full screen':'Individual component'} · ${result!.overview.total} nodes analyzed${result!.overview.artwork?` · ${result!.overview.artwork} artwork files included`:''}`;
-  show();['copy','export'].forEach(id=>button(id).disabled=false);el('message').textContent='Package available for developer review. Original diagnostics are included in the export.';
+  show();['copy','export'].forEach(id=>button(id).disabled=false);el('message').textContent=result!.reference?.status==='captured'?'Package includes a Figma reference PNG for comparison. Android output is not visually verified.':'Package available. Figma reference unavailable: '+(result!.reference?.status==='unavailable'?result!.reference.reason:'not captured');
  }
 };
 function refreshSelection(){

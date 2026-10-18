@@ -6,8 +6,10 @@
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node scripts/test.mjs",
-    "check": "npm run typecheck && npm test && npm run build",
-    "verify:android": "node scripts/android-fixtures.mjs"
+    "check": "npm run typecheck && npm test && npm run test:mcp && npm run build",
+    "verify:android": "node scripts/android-fixtures.mjs",
+    "test:mcp": "node --test tests/mcp.test.mjs",
+    "mcp": "node mcp/server.mjs"
   },
   "devDependencies": {
     "@types/node": "24.19.2",

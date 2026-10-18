@@ -4,7 +4,7 @@
 
 A Figma plugin that fills the gap between a design and Android code. Select a frame, press **Analyze**, and Shim tells you what to fix before handoff, then drafts **Jetpack Compose** and **Android XML** for it.
 
-Deterministic. No AI. No network access. Everything runs inside the plugin.
+Deterministic generation. No AI or network access inside the Figma plugin. An optional local MCP adapter lets coding agents read an extracted handoff.
 
 <p align="center">
   <img src="docs/images/shot-blockers.png" alt="Readiness view with a blocker" width="48%">
@@ -17,7 +17,9 @@ Deterministic. No AI. No network access. Everything runs inside the plugin.
 - **Actions, not noise.** Findings are grouped by cause and ranked. The top three show first, each with **Locate in Figma**, guidance, and technical details. Developer notes and generator limits stay collapsed.
 - **Design vs. generator.** A limit of the code generator is never presented as a request to redesign.
 - **Code and resources.** Compose and XML for the selection, layout and drawable resources, and real artwork exported as 2× PNG (`res/drawable-nodpi/`).
-- **One zip.** Code, resources, `readiness.json` and the `android-ui-schema.json` the code was generated from.
+- **One zip.** Code, resources, source schema, readiness report, `HANDOFF.md`, an owner/priority task queue, and a file manifest.
+- **Visual reference.** Native 1× Figma PNG in the ZIP, with capture time and bounds. Export failures are reported explicitly; Android visual fidelity still needs runtime review.
+- **Agent handoff.** Optional read-only local MCP for readiness, layer lookup, and generated files. See [setup and workflow](docs/MCP.md).
 
 1 Figma px becomes 1 dp (text px become sp).
 
@@ -37,6 +39,8 @@ npm run build
 In **Figma Desktop**: Plugins → Development → Import plugin from manifest… → choose `manifest.json`. Run it from Plugins → Development → Shim. Select one Frame, Component, Instance or Group, then press **Analyze selection**.
 
 Close and reopen the plugin after each rebuild.
+
+See [CHANGELOG.md](CHANGELOG.md) for changes and verification limits.
 
 ## Develop
 

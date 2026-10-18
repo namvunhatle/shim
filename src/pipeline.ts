@@ -1,3 +1,4 @@
+import {captureReference,ReferenceCapture} from './reference';
 import { parseSelection, DesignNode } from './parser';
 import { validate, passedChecks } from './validator';
 import { generateCompose } from './compose';
@@ -11,8 +12,15 @@ export function analyze(nodes:readonly DesignNode[],options:{mode?:SelectionMode
 }
 export function analyzeSchema(schema:AndroidUISchema){
  reconcileCapabilities(schema);const issues=validate(schema);
- return {schema,overview:overview(schema),issues,readiness:buildReadiness(schema,issues),passed:passedChecks(schema),verification:{status:'Not build verified',visualFidelity:'Not rendered or compared'},compose:generateCompose(schema),xml:generateXML(schema)};
+ return {reference:undefined as ReferenceCapture|undefined,schema,overview:overview(schema),issues,readiness:buildReadiness(schema,issues),passed:passedChecks(schema),verification:{status:'Not build verified',visualFidelity:'Not rendered or compared'},compose:generateCompose(schema),xml:generateXML(schema)};
 }
 export type Analysis=ReturnType<typeof analyze>;
 
-export async function analyzeWithAssets(nodes:readonly DesignNode[],options:{mode?:SelectionMode},exporter:AssetExporter){const schema=parseSelection(nodes,options),before=JSON.stringify(schema);await collectAssets(schema,exporter);if(JSON.stringify(parseSelection(nodes,options))!==before)throw new Error('Design changed during artwork export. Analyze again for a consistent snapshot.');return analyzeSchema(schema);}
+export async function analyzeWithAssets(nodes:readonly DesignNode[],options:{mode?:SelectionMode},exporter:AssetExporter,referenceExporter?:()=>Promise<Uint8Array>,referenceBounds?:{width:number;height:number}){
+ const schema=parseSelection(nodes,options),before=JSON.stringify(schema);
+ await collectAssets(schema,exporter);
+ const bounds=referenceBounds??schema.root;
+ const reference=referenceExporter?await captureReference(bounds.width,bounds.height,referenceExporter):undefined;
+ if(JSON.stringify(parseSelection(nodes,options))!==before)throw new Error('Design changed during artwork export or reference capture. Analyze again for a consistent snapshot.');
+ return {...analyzeSchema(schema),reference};
+}

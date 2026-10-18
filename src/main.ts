@@ -22,7 +22,13 @@ figma.ui.onmessage=async(msg:unknown)=>{
   if(msg.type==='analyze'){
    if('selectionId'in msg&&figma.currentPage.selection[0]?.id!==msg.selectionId)throw new Error('Selection changed. Analyze the current selection again.');
    const mode='mode'in msg&&(msg.mode==='screen'||msg.mode==='component')?msg.mode:undefined;
-   const selected=figma.currentPage.selection;const result=await analyzeWithAssets(selected,{mode},exportArtwork);if(figma.currentPage.selection[0]?.id!==selected[0]?.id)throw new Error('Selection changed during artwork export. Analyze again.');figma.ui.postMessage({type:'result',result,requestId:'requestId'in msg?msg.requestId:undefined});
+   const selected=figma.currentPage.selection;
+   const root=selected[0],bounds=root?.absoluteBoundingBox??root;
+   const referenceExporter=async()=>{
+    if(!root?.exportAsync)throw new Error('Reference export is unavailable in this host.');
+    return root.exportAsync({format:'PNG',constraint:{type:'SCALE',value:1},contentsOnly:true,useAbsoluteBounds:true,colorProfile:'SRGB'});
+   };
+   const result=await analyzeWithAssets(selected,{mode},exportArtwork,referenceExporter,bounds);if(figma.currentPage.selection[0]?.id!==selected[0]?.id)throw new Error('Selection changed during artwork export. Analyze again.');figma.ui.postMessage({type:'result',result,requestId:'requestId'in msg?msg.requestId:undefined});
   }
   if(msg.type==='locate-many'&&'ids'in msg&&Array.isArray(msg.ids)){
    const ids=Array.from(new Set(msg.ids.filter((id):id is string=>typeof id==='string')));
